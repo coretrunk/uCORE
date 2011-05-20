@@ -22,8 +22,12 @@ TEMPLATE_DIRS = (
     '/home/core/webapps/ucore/coreo/templates/ucore/',
 )
 
-logging.basicConfig(
+try:
+  logging.basicConfig(
     level=logging.DEBUG,
     filename='/home/core/logs/user/ucore.log',
     filemode = 'w'
 )
+except ImportError, exp:
+  pass
+
